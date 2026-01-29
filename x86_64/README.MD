@@ -3,7 +3,7 @@
 to build:
 <pre>
 TORRSERVER_VERSION=137
-docker build --tag zamal/torrserver:137 --build-arg TORRSERVER_VERSION=${TORRSERVER_VERSION} .
+docker build --tag zamal/torrserver:${TORRSERVER_VERSION} --build-arg TORRSERVER_VERSION=${TORRSERVER_VERSION} .
 </pre>
 
 
