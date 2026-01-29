@@ -1,5 +1,12 @@
 # Torrserver docker image
 
+to build:
+<pre>
+TORRSERVER_VERSION=137
+docker build --tag zamal/torrserver:137 --build-arg TORRSERVER_VERSION=${TORRSERVER_VERSION} .
+</pre>
+
+
 to run:
 <pre>
 docker run \

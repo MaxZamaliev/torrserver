@@ -8,5 +8,3 @@ ENV HOME=/app       \
 WORKDIR /app
 COPY --chown=nobody:nogroup --chmod=700  TorrServer-linux-arm64 /app/torrserver
 CMD ["/app/torrserver","--path","/app/data","--torrentsdir","/app/data/torrents"]
-
-# https://github.com/YouROK/TorrServer
