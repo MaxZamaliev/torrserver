@@ -32,7 +32,7 @@ jobs:
       - name: Log into DockerHub
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Extract Docker metadata
@@ -50,6 +50,8 @@ jobs:
           platforms: linux/amd64
           tags: |
             ${{ env.DOCKER_HUB_REPO }}:latest
-             ${{ env.DOCKER_HUB_REPO }}:${{ env.TORRSERVER_VERSION }}
+            ${{ env.DOCKER_HUB_REPO }}:${{ env.TORRSERVER_VERSION }}
+          build-args: |
+            "TORRSERVER_VERSION=${{ env.TORRSERVER_VERSION }}"             
           cache-from: type=gha
           cache-to: type=gha,mode=max
