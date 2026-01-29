@@ -1,8 +1,8 @@
 FROM alpine AS downloader
-ARG TORRSERVER_RELEASE_VERSION=MatriX.137
+ARG TORRSERVER_VERSION="137"
 USER nobody
 WORKDIR /app
-RUN wget https://github.com/YouROK/TorrServer/releases/download/${TORRSERVER_RELEASE_VERSION}/TorrServer-linux-amd64 -O /app/torrserver && \
+RUN wget https://github.com/YouROK/TorrServer/releases/download/MatriX.${TORRSERVER_VERSION}/TorrServer-linux-amd64 -O /app/torrserver && \
     chmod 777 /app/torrserver
 
 
