@@ -3,13 +3,14 @@ name: CI/CD - torrserver docker image
 on:
   push:
     branches: [ "main" ]
-    # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
     branches: [ "main" ]
 
 env:
   IMAGE_NAME: ${{ github.repository }}
+  TORRSERVER_VERSION: 137
+  DOCKER_HUB_REPO: zamal/torrserver
 
 
 jobs:
@@ -48,7 +49,7 @@ jobs:
           push: true
           platforms: linux/amd64
           tags: |
-            zamal/torrserver:latest
-            zamal/torrserver:${{ steps.meta.outputs.SHORT_SHA }}
+            ${{ env.DOCKER_HUB_REPO }}:latest
+             ${{ env.DOCKER_HUB_REPO }}:${{ env.TORRSERVER_VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
