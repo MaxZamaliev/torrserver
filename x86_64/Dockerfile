@@ -13,9 +13,8 @@ ENV HOME=/app       \
     TS_DONTKILL=1   \
     TS_HTTPAUTH=0
 COPY --from=downloader --chown=nobody:nogroup /app /app
-
+RUN chmod -R -s /usr/bin/* /usr/sbin/* # fix CIS-DI-0008
 USER nobody
 WORKDIR /app
 CMD ["/app/torrserver","--path","/app/data","--torrentsdir","/app/data/torrents"]
 
-# https://github.com/YouROK/TorrServer
