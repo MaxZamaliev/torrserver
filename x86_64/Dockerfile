@@ -6,7 +6,7 @@ RUN wget https://github.com/YouROK/TorrServer/releases/download/MatriX.${TORRSER
     chmod 777 /app/torrserver
 
 
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 LABEL org.opencontainers.image.authors="zamal@inbox.ru"
 ENV HOME=/app       \
     TS_PORT=8090    \
