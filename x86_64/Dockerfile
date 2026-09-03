@@ -12,6 +12,9 @@ ENV HOME=/app       \
     TS_PORT=8090    \
     TS_DONTKILL=1   \
     TS_HTTPAUTH=0
+RUN apt update && \
+    apt install -y ffmpeg ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 COPY --from=downloader --chown=nobody:nogroup /app /app
 RUN chmod -R -s /usr/bin/* /usr/sbin/* # fix CIS-DI-0008
 USER nobody
