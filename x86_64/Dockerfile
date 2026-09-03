@@ -1,5 +1,5 @@
 FROM alpine AS downloader
-ARG TORRSERVER_VERSION="137"
+ARG TORRSERVER_VERSION="144.1"
 USER nobody
 WORKDIR /app
 RUN wget https://github.com/YouROK/TorrServer/releases/download/MatriX.${TORRSERVER_VERSION}/TorrServer-linux-amd64 -O /app/torrserver && \

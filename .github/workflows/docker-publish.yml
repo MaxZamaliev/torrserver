@@ -9,7 +9,7 @@ on:
 
 env:
   IMAGE_NAME: ${{ github.repository }}
-  TORRSERVER_VERSION: 137
+  TORRSERVER_VERSION: 144.1
   DOCKER_HUB_REPO: zamal/torrserver
 
 
